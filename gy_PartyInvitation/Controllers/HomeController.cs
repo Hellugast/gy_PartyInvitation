@@ -23,15 +23,32 @@ namespace gy_PartyInvitation.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        [HttpGet]
+        public IActionResult Register()
         {
             return View();
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [HttpPost]
+        public IActionResult Register(Participant participant)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            if (ModelState.IsValid)
+            {
+                if (participant.Participation == true)
+                {
+                    ViewBag.Message = "Hazırlıklar başlasın!";
+                    return View("Thanks");
+                }
+                else
+                {
+                    ViewBag.Message = "Bir dahaki sefere bekleriz";
+                    return View("Thanks");
+                }
+            }
+            return View();
         }
+
+
+
     }
 }

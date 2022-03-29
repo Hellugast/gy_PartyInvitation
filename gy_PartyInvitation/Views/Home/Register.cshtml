@@ -1,0 +1,35 @@
+﻿@model Participant
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<form method="post">
+    <p>
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" placeholder="Ad" />
+        <span asp-validation-for="FullName"></span>
+    </p>
+
+    <p>
+        <label asp-for="Email"></label>
+        <input asp-for="Email" placeholder="Eposta" />
+        <span asp-validation-for="Email"></span>
+    </p>
+
+    <p>
+        <label asp-for="Age"></label>
+        <input asp-for="Age" placeholder="Yaş" />
+        <span asp-validation-for="Age"></span>
+    </p>
+
+    <p>
+        <label asp-for="Participation"></label>
+        <input asp-for="Participation" placeholder="Participation" />
+        <span asp-validation-for="Participation"></span>
+    </p>
+
+
+    <button type="submit">Gönder</button>
+</form>
