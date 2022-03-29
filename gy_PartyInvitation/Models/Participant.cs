@@ -17,7 +17,7 @@ namespace gy_PartyInvitation.Models
         [Display(Name = "E-Mail")]
         public string Email { get; set; }
     
-        [Display(Name = "Katılımcı")]
+        [Display(Name = "Katılmak istiyorum")]
         public bool Participation { get; set; }
 
 
